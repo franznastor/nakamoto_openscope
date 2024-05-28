@@ -16,7 +16,7 @@ COPY README.MD /app
 COPY requirements.txt /app
 COPY src /app/src
 
-COPY startup_script.sh /app
+COPY startup-script.sh /app
 
 #RUN python -m venv local
 
