@@ -12,7 +12,7 @@ COPY doc /app
 COPY env /app
 COPY resources /app
 COPY LICENSE /app
-COPY README.MD /app
+COPY README.md /app
 COPY requirements.txt /app
 COPY src /app/src
 
