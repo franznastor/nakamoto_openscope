@@ -22,6 +22,5 @@ COPY src /app/src
 
 RUN pip install --no-cache-dir -r requirements.txt
 RUN chmod +x generate_ini.py
-RUN chmod +x startup-script.sh
 
 ENTRYPOINT ["./startup-script.sh"]
