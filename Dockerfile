@@ -10,16 +10,18 @@ SHELL ["/bin/bash", "-c"]
 WORKDIR /app
 
 COPY doc /app
-COPY env /app
 COPY resources /app
 COPY LICENSE /app
 COPY README.md /app
 COPY requirements.txt /app
+
+COPY generate_ini.py /app
+COPY startup-script.sh /app
+
 COPY src /app/src
 
-COPY startup-script.sh /app
+RUN pip install --no-cache-dir -r requirements.txt
+RUN chmod +x generate_ini.py
 RUN chmod +x startup-script.sh
 
-RUN pip install --no-cache-dir -r requirements.txt
-
-CMD ["./startup-script.sh"]
+ENTRYPOINT ["./startup-script.sh"]

@@ -1,23 +1,13 @@
-version: '3'
+version: '3.8'
+
 services:
-  openscope-miner-0:
-    image: openscope-miner:latest
-    build:
-      context: .
-      dockerfile: Dockerfile
-    volumes:
-    # Don't mount the app folder. This will be explicitly copied by the dockerfile so that
-    # the container files live independent of the host.
-      - /root/.commune:/root/.commune
-      - ./logs:/logs
-    env_file:
-    - ./anthropic_key.env
+  openscope-miner0:
+    build: .
     environment:
-      - ANTHROPIC_MODEL=claude-3-opus-20240229
-      - ANTHROPIC_MAX_TOKENS=1000
-      - ANTHROPIC_TEMPERATURE=0.7168854
-      - PORT=8080
+      - MINER_PORT=8001
     ports:
-      - 8080:8080
-    working_dir: /app
-    command: ["/bin/bash", "-c", "/app/startup_script.sh"]
+      - "8001:8001"
+    volumes:
+      - ./env/openscope-miner0:/app/env
+
+  # Add more miners as needed
