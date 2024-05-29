@@ -17,8 +17,9 @@ COPY README.md /app
 COPY requirements.txt /app
 COPY src /app/src
 
-#COPY startup-script.sh /app
+COPY startup-script.sh /app
+RUN chmod +x startup-script.sh
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD ["/bin/bash", "-c", "sleep infinity"]
+CMD ["./startup-script.sh"]
