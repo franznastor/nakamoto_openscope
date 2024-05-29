@@ -16,7 +16,7 @@ COPY README.md /app
 COPY requirements.txt /app
 
 COPY generate_ini.py /app
-COPY startup-script.sh /app
+COPY startup_script.sh /app
 
 COPY src /app/src
 
