@@ -14,6 +14,7 @@ COPY resources /app
 COPY LICENSE /app
 COPY README.md /app
 COPY requirements.txt /app
+COPY .env /app
 
 COPY generate_ini.py /app
 COPY startup_script.sh /app
