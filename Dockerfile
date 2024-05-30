@@ -21,7 +21,7 @@ COPY startup_script.sh /app
 COPY src /app/src
 
 RUN pip install --no-cache-dir -r requirements.txt
-RUN chmod +x startup_script.py
+RUN chmod +x startup_script.sh
 RUN chmod +x generate_ini.py
 
 CMD ["./startup_script.sh"]
