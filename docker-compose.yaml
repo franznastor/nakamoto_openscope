@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  openscope-miner0:
+    build: .
+    image: openscope-miner-img
+    container_name: openscope-miner0
+    env_file:
+      - .env
+    volumes:
+      - ~/.commune/key/f-openscope_key.json:/root/.commune/key/miner_key.json
+
+#    ports:
+#      - "8000:8000"   # Example port mapping
+#    healthcheck:
+#      test: ["CMD-SHELL", "curl -f http://localhost:8080 || exit 1"]
+#      interval: 1m30s
+#      timeout: 10s
+#      retries: 3
+#    logging:
+#      driver: "json-file"
+#      options:
+#        max-size: "10m"
+#        max-file: "3"
